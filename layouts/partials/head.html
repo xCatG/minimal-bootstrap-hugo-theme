@@ -7,7 +7,7 @@
   {{ with .Site.Params.description }}
   <meta name="description" content="{{ . }}">
   {{ end }}
-
+  {{ partial "google-fonts" . }}
   {{ $appleTouchIcon := "apple-touch-icon.png" }}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouchIcon | absURL }}">
 
@@ -43,4 +43,13 @@
   {{ end }}
 
   {{ partial "style.html" . }}
+  <style>
+    body {
+      font-family: '{{ .Site.Params.body_font }}';
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: '{{ .Site.Params.body_font }}';
+    }
+  </style>
 </head>
